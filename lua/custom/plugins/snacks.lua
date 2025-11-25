@@ -6,7 +6,7 @@ return {
   opts = {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
-    explorer = { enabled = true },
+    --    explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -21,7 +21,7 @@ return {
     words = { enabled = true },
     styles = {
       notification = {
-        -- wo = { wrap = true } -- Wrap notifications
+        wo = { wrap = true }, -- Wrap notifications
       },
     },
   },
@@ -62,13 +62,13 @@ return {
       end,
       desc = 'Notification History',
     },
-    {
-      '<leader>e',
-      function()
-        Snacks.explorer()
-      end,
-      desc = 'File Explorer',
-    },
+    -- {
+    --  '<leader>e',
+    -- function()
+    --  Snacks.explorer()
+    --      end,
+    --     desc = 'File Explorer',
+    --  },
     -- find
     {
       '<leader>fb',
