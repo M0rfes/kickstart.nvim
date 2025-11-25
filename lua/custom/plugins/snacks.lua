@@ -28,11 +28,11 @@ return {
   keys = {
     -- Top Pickers & Explorer
     {
-      '<leader><space>',
+      '<leader><leader>',
       function()
         Snacks.picker.smart()
       end,
-      desc = 'Smart Find Files',
+      desc = 'Find Files (project root)',
     },
     {
       '<leader>,',
@@ -87,7 +87,7 @@ return {
     {
       '<leader>ff',
       function()
-        Snacks.picker.files()
+        Snacks.picker.files { hidden = true }
       end,
       desc = 'Find Files',
     },
