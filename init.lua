@@ -87,6 +87,10 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldenable = false
+
 vim.opt.rtp:prepend '/Users/morfes/.opam/5.1.0/share/ocp-indent/vim'
 
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
