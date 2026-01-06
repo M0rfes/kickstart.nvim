@@ -7,12 +7,19 @@ local keys = {
     desc = 'Add file to Harpoon',
   },
   {
-    '<leader>h',
+    '<leader>H',
     function()
       local harpoon = require 'harpoon'
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end,
     desc = 'Harpoon quick menu',
+  },
+  {
+    '<leader>hh',
+    function()
+      require('harpoon'):list():remove()
+    end,
+    desc = 'Remove current file from Harpoon',
   },
   {
     '<leader>0',
