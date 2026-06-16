@@ -1,9 +1,6 @@
 return {
   'luckasRanarison/tailwind-tools.nvim',
   name = 'tailwind-tools',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-  },
   opts = {
     server = {
       override = false, -- important: do NOT touch LSP
