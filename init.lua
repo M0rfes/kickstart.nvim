@@ -710,8 +710,15 @@ require('lazy').setup({
         ts_ls = {},
         eslint = {},
         tailwindcss = {},
-        --
         ocamllsp = {},
+        purescriptls = {
+          settings = {
+            purescript = {
+              addSpagoSources = true,
+              formatter = 'purs-tidy',
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -806,6 +813,7 @@ require('lazy').setup({
         json = { 'prettierd', 'prettier' },
         yaml = { 'prettierd', 'prettier' },
         markdown = { 'prettierd', 'prettier' },
+        purescript = { 'purs-tidy' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

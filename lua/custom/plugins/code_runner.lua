@@ -28,6 +28,7 @@ return {
       python = 'python3 -u',
       sh = 'bash',
       go = 'go run',
+      purescript = 'spago run',
     },
   },
 }
