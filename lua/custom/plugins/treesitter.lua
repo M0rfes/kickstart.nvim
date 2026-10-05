@@ -12,6 +12,7 @@ return {
       'c',
       'css',
       'diff',
+      'go',
       'html',
       'javascript',
       'jsdoc',
@@ -23,6 +24,7 @@ return {
       'markdown_inline',
       'query',
       'regex',
+      'rust',
       'toml',
       'tsx',
       'typescript',
@@ -40,11 +42,14 @@ return {
     end
 
     vim.api.nvim_create_autocmd('FileType', {
-      callback = function()
-        pcall(vim.treesitter.start)
-        pcall(function()
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end)
+      callback = function(event)
+        local lang = vim.treesitter.language.get_lang(event.match)
+        if not lang or not vim.tbl_contains(ts.get_installed 'parsers', lang) then
+          return
+        end
+
+        vim.treesitter.start()
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
       end,
     })
   end,
